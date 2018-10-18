@@ -1,6 +1,8 @@
 import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
 
+import {saveAuthToken, clearAuthToken} from '../local-storage';
+
 export const FETCH_EQUATIONS_REQUEST = 'FETCH_EQUATIONS_REQUEST';
 export const fetchEquationsRequest = () => {
   return ({
@@ -32,21 +34,29 @@ export const addEquation = (equation) => {
   });
 };
 
-export const fetchEquations = () => (dispatch) => {
+export const fetchEquations = () => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
   dispatch(fetchEquationsRequest());
-  fetch(`${API_BASE_URL}/equation`)
+  fetch(`${API_BASE_URL}/equation`, {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${authToken}`
+    }
+  })
   .then(res => normalizeResponseErrors(res))
   .then(res => res.json())
   .then(res => dispatch(fetchEquationsSuccess(res)))
   .catch(err => dispatch(fetchEquationsError(err)));
 }
 
-export const postEquation = (equation) => (dispatch) => {
+export const postEquation = (equation) => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
   dispatch(fetchEquationsRequest());
   fetch(`${API_BASE_URL}/equation`, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${authToken}`
     },
     body: JSON.stringify({equation})
   }).then(res => normalizeResponseErrors(res))

@@ -9,9 +9,9 @@ export class EquationList extends React.Component{
 
   render(){
     return(
-      <ul>
+      <div>
       {this.props.equations}
-      </ul>
+    </div>
     )
   }
 }
@@ -22,10 +22,8 @@ const mapStateToProps = state => {
   const equationList = state.equation.equations.map((equation, index)=>{
      return (
       <div>
-       <ul>
-        <li key={index}>{equation.name}</li>
-        {equation.molecules.map((molecule, index) => <li>{molecule.name} {molecule.weight}</li>)}
-       </ul>
+        <h2 key={index}>{equation.name}</h2>
+        {equation.molecules.map((molecule, index) => <h4>Molecule Name:{molecule.name} Molecule Weight:{molecule.weight}</h4>)}
       </div>
     )
   });
