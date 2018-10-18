@@ -34,7 +34,7 @@ export const addEquation = (equation) => {
 
 export const fetchEquations = () => (dispatch) => {
   dispatch(fetchEquationsRequest());
-  fetch(`${API_BASE_URL}/api/equations`)
+  fetch(`${API_BASE_URL}/equation`)
   .then(res => normalizeResponseErrors(res))
   .then(res => res.json())
   .then(res => dispatch(fetchEquationsSuccess(res)))
@@ -43,7 +43,7 @@ export const fetchEquations = () => (dispatch) => {
 
 export const postEquation = (equation) => (dispatch) => {
   dispatch(fetchEquationsRequest());
-  fetch(`${API_BASE_URL}/api/equation`, {
+  fetch(`${API_BASE_URL}/equation`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
