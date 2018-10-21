@@ -28,7 +28,7 @@ const mapStateToProps = state => {
     )
   });
   return {
-    equations: equationList
+    equations: equationList.reverse()
   };
 };
 
