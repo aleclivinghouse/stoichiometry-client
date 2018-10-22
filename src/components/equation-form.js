@@ -28,6 +28,19 @@ class EquationForm extends React.Component {
     }
   }
 
+  deleteField = (e) => {
+    let molecules = [...this.state.molecules];
+    console.log('these are the moleculesgoing into delete');
+    console.log(molecules);
+    let toDelete = molecules[e.target.dataset.id];
+    let i = molecules.indexOf(toDelete);
+    let theMolecules = molecules.filter((i) => {
+      return i != toDelete
+    });
+    console.log(i);
+    this.setState({ molecules: theMolecules});
+  }
+
 
   addMolecule = () => {
   this.setState((prevState) => ({
@@ -75,11 +88,11 @@ handleSubmit = (e) => {
     let equation = this.state.equation;
     return (
       <div className="form-wrapper">
-        <h3>{this.state.equationError}</h3>
-        <h3>{this.state.moleculesError}</h3>
+        <p className="error">{this.state.equationError}</p>
+        <p classNAme="error">{this.state.moleculesError}</p>
       <form onSubmit={this.handleSubmit}  >
         <label htmlFor="equation">Equation</label>
-        <input type="text" name="equation" id="equation" value={equation} onChange={this.handleChange}/>
+        <input type="text" name="equation" id="equation" value={equation} onChange={this.handleChange} className="equation-input"/>
         {
           molecules.map((val, idx)=>{
             let amountId = `amount-${idx}`, whichMoleId = `whichMole-${idx}`
@@ -110,12 +123,13 @@ handleSubmit = (e) => {
                  <option value="3">Third</option>
                  <option value="4">Fourth</option>
                </select>
+               <a onClick={this.deleteField} class="delete-field-button" data-id={idx}>Delete</a>
                </div>
             )
           })
         }
         <a onClick={this.addMolecule} className="add-molecule">Add Another Molecule</a>
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Submit" className="submit-button"/>
       </form>
     </div>
     )

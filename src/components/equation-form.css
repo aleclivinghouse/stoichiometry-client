@@ -64,19 +64,85 @@ h1 {
 label {
  display: inline-block;
  margin-bottom: .5rem;
- font-size: .75rem;
+ font-size: .50rem;
  text-transform: uppercase;
  -ms-touch-action: manipulation;
  touch-action: manipulation;
 }
 
-input,
-textarea,
-select {
+select{
+ display: inline-block;
+ max-width: 30%;
+ padding: .5rem .75rem;
+ font-size: 1rem;
+ vertical-align: center;
+ line-height: 1.25;
+ color: #55595c;
+ background-color: #fff;
+ background-image: none;
+ background-clip: padding-box;
+ border-top: 0;
+ border-right: 0;
+ border-bottom: 1px solid #eee;
+ border-left: 0;
+ border-radius: 3px;
+ -webkit-transition: all 0.25s cubic-bezier(0.4, 0, 1, 1);
+ transition: all 0.25s cubic-bezier(0.4, 0, 1, 1);
+}
+
+.amount{
+ box-sizing: border-box;
+ vertical-align: center;
+ -moz-box-sizing: border-box;
+ -webkit-box-sizing: border-box;
+ display: inline-block;
+ max-width: 30%;
+ padding: .5rem .75rem;
+ margin-bottom: -50px;
+ font-size: 1rem;
+ line-height: 1.25;
+ color: #55595c;
+ background-color: #fff;
+ background-image: none;
+ background-clip: padding-box;
+ border-top: 0;
+ border-right: 0;
+ border-bottom: 1px solid #eee;
+ border-left: 0;
+ border-radius: 3px;
+ -webkit-transition: all 0.25s cubic-bezier(0.4, 0, 1, 1);
+ transition: all 0.25s cubic-bezier(0.4, 0, 1, 1);
+}
+
+/* .equation-input {
+
+} */
+
+.equation-input {
+  display: block;
+  padding: .5rem .75rem;
+  width: 100%;
+  font-size: 1rem;
+  text-align: center;
+  line-height: 1.25;
+  color: #55595c;
+  background-color: #fff;
+  background-image: none;
+  background-clip: padding-box;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 1px solid #eee;
+  border-left: 0;
+  border-radius: 3px;
+  -webkit-transition: all 0.25s cubic-bezier(0.4, 0, 1, 1);
+  transition: all 0.25s cubic-bezier(0.4, 0, 1, 1);
+}
+.add-molecule {
  display: block;
  padding: .5rem .75rem;
  width: 100%;
  font-size: 1rem;
+ text-align: center;
  line-height: 1.25;
  color: #55595c;
  background-color: #fff;
@@ -130,3 +196,7 @@ textarea {
 .btn:focus {
  outline: 0;
 }
+
+/* .add-molecule{
+  background-color: #eee
+} */
