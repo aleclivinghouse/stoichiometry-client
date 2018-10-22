@@ -34,6 +34,7 @@ export const addEquation = (equation) => {
   });
 };
 
+
 export const fetchEquations = () => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   dispatch(fetchEquationsRequest());
@@ -63,4 +64,26 @@ export const postEquation = (equation) => (dispatch, getState) => {
   .then(() => {
     dispatch(fetchEquations());})
   .catch(err => dispatch(fetchEquationsError(err)));
+}
+
+export const DELETE_EQUATION_SUCCESS = 'DELETE_EQUATION_SUCCESS';
+export const deleteEquationSuccess = (id) => {
+  return {
+    type: DELETE_EQUATION_SUCCESS,
+    id,
+  };
+}
+
+export const deleteEquation = (id) => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+    fetch(`${API_BASE_URL}/equation/${id}`, {
+      method: "DELETE",
+      headers: new Headers({
+        Authorization: `Bearer ${authToken}`
+      }),
+    }).then(response => response)
+    .then(() => {
+    dispatch(fetchEquations());})
+    .catch(err => dispatch(fetchEquationsError(err)));
+      // .then(id => dispatch(deleteEquationSuccess(id)));
 }

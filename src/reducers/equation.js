@@ -2,7 +2,8 @@ import {
   FETCH_EQUATIONS_REQUEST,
   FETCH_EQUATIONS_SUCCESS,
   FETCH_EQUATIONS_ERROR,
-  ADD_EQUATION
+  ADD_EQUATION,
+  DELETE_EQUATION_SUCCESS
 } from '../actions/equation';
 
 const initialState = {
@@ -29,6 +30,8 @@ export default function(state = initialState, action){
         error: action.error
       });
     case ADD_EQUATION: return Object.assign({}, state, {equationToAdd: action.equation});
+    case DELETE_EQUATION_SUCCESS:
+      return action.id;
     default:
       return state
   }

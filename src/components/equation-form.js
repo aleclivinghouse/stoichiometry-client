@@ -30,14 +30,11 @@ class EquationForm extends React.Component {
 
   deleteField = (e) => {
     let molecules = [...this.state.molecules];
-    console.log('these are the moleculesgoing into delete');
-    console.log(molecules);
     let toDelete = molecules[e.target.dataset.id];
     let i = molecules.indexOf(toDelete);
     let theMolecules = molecules.filter((i) => {
       return i != toDelete
     });
-    console.log(i);
     this.setState({ molecules: theMolecules});
   }
 
@@ -61,8 +58,8 @@ handleSubmit = (e) => {
         molecule.whichMolecule = parseInt(molecule.whichMolecule);
         console.log('below should be a type number');
    }
-   console.log('below are the molecules');
-   console.log(this.state.molecules);
+   console.log('below is the state');
+   console.log(this.state);
    this.props.dispatch(postEquation(this.state));
 
   } else if(equationIsValid === false && moleculesAreValid == true){
@@ -89,7 +86,7 @@ handleSubmit = (e) => {
     return (
       <div className="form-wrapper">
         <p className="error">{this.state.equationError}</p>
-        <p classNAme="error">{this.state.moleculesError}</p>
+        <p className="error">{this.state.moleculesError}</p>
       <form onSubmit={this.handleSubmit}  >
         <label htmlFor="equation">Equation</label>
         <input type="text" name="equation" id="equation" value={equation} onChange={this.handleChange} className="equation-input"/>
