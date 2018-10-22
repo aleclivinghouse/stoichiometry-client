@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import { fetchEquations } from '../actions/equation';
+import './equation-list.css';
 
 export class EquationList extends React.Component{
   componentDidMount(){
@@ -9,7 +10,7 @@ export class EquationList extends React.Component{
 
   render(){
     return(
-      <div>
+      <div className="list-wrapper">
       {this.props.equations}
     </div>
     )
@@ -21,8 +22,10 @@ const mapStateToProps = state => {
   console.log(state);
   const equationList = state.equation.equations.map((equation, index)=>{
      return (
-      <div>
+      <div className="equation-card">
+        <div className="card-header">
         <h2 key={index}>{equation.name}</h2>
+        </div>
         {equation.molecules.map((molecule, index) => <h4>Molecule Name:{molecule.name} Molecule Weight:{molecule.weight}</h4>)}
       </div>
     )

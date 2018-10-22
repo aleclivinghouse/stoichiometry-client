@@ -5,6 +5,7 @@ export function validateEquation(equation){
  let numRegex = /[0-9]/;
  let capitalRegex = /[A-Z]/;
  let lettersRegex = /^[a-zA-Z]+$/;
+ let capitalSplit = /(?=[A-Z])/;
  if(!containsEquals(equation) || !containsTwoPlusses(equation)){
    return false;
  } else {
@@ -12,19 +13,34 @@ export function validateEquation(equation){
    let leftMolecules = sides[0].split("+");
    let rightMolecules = sides[1].split("+");
    let equationArray = [...leftMolecules, ...rightMolecules];
+   console.log("below is the equation array");
+   console.log(equationArray);
+    let elementsArray = [];
    for(let molecule of equationArray){
-     let elementsArray = molecule.split(/([0-9]+)/);
-       for(let element in elementsArray){
-         if(lettersRegex.test(element) === true){
-         let validElement = isInPeriodicTable(element);
-         if(validElement === false){
-           return false;
-        }
+     let firstArray = molecule.split(/([0-9]+)/);
+     console.log('below is the first array');
+     console.log(firstArray);
+     for(let element of firstArray){
+       let newElements = element.split(capitalSplit);
+       for(let thing of newElements){
+          if(lettersRegex.test(thing) === true){
+            elementsArray.push(thing);
+         }
        }
      }
    }
+   console.log('below is the elements array');
+   console.log(elementsArray);
+     for(let element of elementsArray){
+       let validElement = isInPeriodicTable(element);
+       if(validElement === false){
+         console.log('this is the element it breaks on');
+         console.log(element);
+         return false;
+     }
+   }
+    return true;
  }
- return true;
 }
 //
 

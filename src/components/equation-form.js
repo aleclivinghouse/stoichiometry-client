@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import {validateEquation} from '../validations/validateEquation';
 import {validateMolecules} from '../validations/validateMolecules';
 import {postEquation, addEquation, fetchEquationsError} from '../actions/equation';
+import './equation-form.css';
 
 class EquationForm extends React.Component {
   constructor(props) {
@@ -28,9 +29,9 @@ class EquationForm extends React.Component {
   }
 
 
-  addMolecule = (e) => {
+  addMolecule = () => {
   this.setState((prevState) => ({
-    molecules: [...prevState.molecules, {amount: 0, whichMolecule: 1}],
+    molecules: [...prevState.molecules, {amount: 0, whichMolecule: 1}]
   }));
 }
 
@@ -39,20 +40,18 @@ class EquationForm extends React.Component {
 handleSubmit = (e) => {
   e.preventDefault()
   //rest of the code
-  let theState = this.state;
-  for(let molecule of this.state.molecules){
-    if(isNaN(molecule.whichMolecule)){
-      molecule.whichMolecule = parseInt(molecule.whichMolecule);
-  }
   const equationIsValid = validateEquation(this.state.equation);
   const moleculesAreValid = validateMolecules(this.state.molecules);
-  console.log('this is equation is valid ' + equationIsValid);
   if(equationIsValid === true && moleculesAreValid == true){
-    this.setState({
-        moleculesError: '',
-        equationError: ''
-      })
-    this.props.dispatch(postEquation(theState));
+    // let theState = this.state;
+    for(let molecule of this.state.molecules){
+        molecule.whichMolecule = parseInt(molecule.whichMolecule);
+        console.log('below should be a type number');
+   }
+   console.log('below are the molecules');
+   console.log(this.state.molecules);
+   this.props.dispatch(postEquation(this.state));
+
   } else if(equationIsValid === false && moleculesAreValid == true){
     this.setState({
         equationError: 'Must be a valid Equation',
@@ -70,25 +69,23 @@ handleSubmit = (e) => {
       })
     }
   }
-}
 
   render(){
     let molecules = this.state.molecules;
     let equation = this.state.equation;
     return (
-      <div>
+      <div className="form-wrapper">
         <h3>{this.state.equationError}</h3>
         <h3>{this.state.moleculesError}</h3>
       <form onSubmit={this.handleSubmit}  >
         <label htmlFor="equation">Equation</label>
         <input type="text" name="equation" id="equation" value={equation} onChange={this.handleChange}/>
-        <button onClick={this.addMolecule}>Add Another Molecule</button>
         {
           molecules.map((val, idx)=>{
             let amountId = `amount-${idx}`, whichMoleId = `whichMole-${idx}`
             return (
               <div key={idx}>
-                <label htmlFor={amountId}>amount</label>
+                <label htmlFor={amountId}>Amount</label>
                 <input
                   type="number"
                   name={amountId}
@@ -117,6 +114,7 @@ handleSubmit = (e) => {
             )
           })
         }
+        <a onClick={this.addMolecule} className="add-molecule">Add Another Molecule</a>
         <input type="submit" value="Submit" />
       </form>
     </div>

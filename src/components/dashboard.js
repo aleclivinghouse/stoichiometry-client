@@ -4,6 +4,7 @@ import requiresLogin from './requires-login';
 import {fetchProtectedData} from '../actions/protected-data';
 import EquationForm from './equation-form';
 import EquationList from './equation-list';
+import './dashboard.css';
 
 export class Dashboard extends React.Component {
     componentDidMount() {
@@ -20,8 +21,10 @@ export class Dashboard extends React.Component {
                 <div className="dashboard-protected-data">
                      Protected data: {this.props.protectedData}
                 </div>
-                <EquationForm />
-                <EquationList />
+                <div className="form-wrapper">
+                  <EquationForm />
+                  <EquationList />
+                </div>
             </div>
         );
     }
