@@ -3,22 +3,24 @@ import {connect} from 'react-redux';
 import ReactDOM from 'react-dom';
 import {validateEquation} from '../validations/validateEquation';
 import {validateMolecules} from '../validations/validateMolecules';
+import {limitingReactantValidation} from '../validations/limitingReactantValidation';
 import {postEquation, addEquation, fetchEquationsError} from '../actions/equation';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './equation-form.css';
 
-class EquationForm extends React.Component {
+export class EquationForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       molecules: [{amount: 0, whichMolecule: 1}],
       equation: '',
       equationError: '',
-      moleculesError: ''
+      moleculesError: '',
     };
   }
 
   handleChange = (e) => {
-    //rest
+    console.log(e.target);
     if(["amount", "whichMolecule"].includes(e.target.className)){
       let molecules = [...this.state.molecules];
       molecules[e.target.dataset.id][e.target.className] = e.target.value
@@ -52,6 +54,7 @@ handleSubmit = (e) => {
   //rest of the code
   const equationIsValid = validateEquation(this.state.equation);
   const moleculesAreValid = validateMolecules(this.state.molecules);
+
   if(equationIsValid === true && moleculesAreValid == true){
     // let theState = this.state;
     for(let molecule of this.state.molecules){
@@ -61,21 +64,25 @@ handleSubmit = (e) => {
    console.log('below is the state');
    console.log(this.state);
    this.props.dispatch(postEquation(this.state));
+   this.setState({
+       equationError: '',
+       moleculesError: ''
+     })
 
   } else if(equationIsValid === false && moleculesAreValid == true){
     this.setState({
-        equationError: 'Must be a valid Equation',
+        equationError: 'Must be a valid equation with two reactants',
         moleculesError: ''
       })
     } else if(equationIsValid === true && moleculesAreValid == false){
       this.setState({
-          moleculesError: 'Molecule weight must be greater than zero and molecule position must be unique',
+          moleculesError: 'Molecule weight must be greater than zero, molecule position must be unique',
           equationsError: ''
       })
     } else {
       this.setState({
           moleculesError: 'Molecule weight must be greater than zero and molecule position must be unique',
-          equationError: 'Must be a valid Equation'
+          equationError: 'Must be a valid equation with two reactants'
       })
     }
   }
@@ -85,16 +92,19 @@ handleSubmit = (e) => {
     let equation = this.state.equation;
     return (
       <div className="form-wrapper">
-        <p className="error">{this.state.equationError}</p>
-        <p className="error">{this.state.moleculesError}</p>
+          <p className="error">{this.state.equationError}</p>
+          <p className="error">{this.state.moleculesError}</p>
       <form onSubmit={this.handleSubmit}  >
         <label htmlFor="equation">Equation</label>
         <input type="text" name="equation" id="equation" value={equation} onChange={this.handleChange} className="equation-input"/>
+          <a onClick={this.addMolecule} className="add-molecule"> <FontAwesomeIcon icon="plus-circle" size="lg"/></a>
         {
           molecules.map((val, idx)=>{
             let amountId = `amount-${idx}`, whichMoleId = `whichMole-${idx}`
+            console.log('below is the whichMole id');
+            console.log();
             return (
-              <div key={idx}>
+               <div key={idx} className = "field-wrapper">
                 <label htmlFor={amountId}>Amount</label>
                 <input
                   type="number"
@@ -117,15 +127,12 @@ handleSubmit = (e) => {
                  >
                  <option value="1">First</option>
                  <option value="2">Second</option>
-                 <option value="3">Third</option>
-                 <option value="4">Fourth</option>
                </select>
                <a onClick={this.deleteField} class="delete-field-button" data-id={idx}>Delete</a>
                </div>
             )
           })
         }
-        <a onClick={this.addMolecule} className="add-molecule">Add Another Molecule</a>
         <input type="submit" value="Submit" className="submit-button"/>
       </form>
     </div>

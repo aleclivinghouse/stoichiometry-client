@@ -219,7 +219,8 @@ You would need to install an ESLint plugin for your editor first.
 
 >If you are using the Atom `linter-eslint` plugin, make sure that **Use global ESLint installation** option is checked:
 
-><img src="http://i.imgur.com/yVNNHJM.png" width="300">
+><img src="http://i.imgur.com/yVNNHJM.png"
+="300">
 
 
 >**For Visual Studio Code users**
@@ -1516,17 +1517,17 @@ When you build the project, Create React App will place the `public` folder cont
 2. Install `serve` by running `npm install --save serve`.
 
 3. Add this line to `scripts` in `package.json`:
-    
+
     ```
     "now-start": "serve build/",
     ```
-    
+
 4. Run `now` from your project directory. You will see a **now.sh** URL in your output like this:
-    
+
     ```
     > Ready! https://your-project-dirname-tpspyhtdtk.now.sh (copied to clipboard)
     ```
-    
+
     Paste that URL into your browser when the build is complete, and you will see your deployed app.
 
 Details are available in [this article.](https://zeit.co/blog/now-static)

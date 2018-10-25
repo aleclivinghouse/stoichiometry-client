@@ -1,0 +1,20 @@
+.help-button {
+  border-radius: 5px;
+  border-width: 2px;
+  border-color: white;
+  font-weight:200;
+  padding: 3px;
+}
+
+div{
+  margin: auto;
+  text-align: center;
+}
+
+.modal{
+  background-color: white;
+  width: 50%;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 10px;
+}

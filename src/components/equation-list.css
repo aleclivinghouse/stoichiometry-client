@@ -1,17 +1,94 @@
-.list-wrapper {
-  width: 800px;
-  margin: auto;
-  text-align: center;
-  background-color: #f9f9f9
+@media only screen and (min-width: 600px) {
+  .list-wrapper {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    background-color: white
+  }
+
+
+  /* .card-header{
+    background-color: #D3D3D3;
+  } */
+
+  .equation-card{
+    display: block;
+    margin-top: 40px;
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+  }
+
+  .submit-button {
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: white;
+    font-weight:200;
+    padding: 3px;
+  }
+
+  .list-items{
+    display: inline;
+  }
+
+
+  /* .delete-button {
+
+  } */
+
+  p {
+    font-weight: lighter;
+  }
 }
+@media only screen and (max-width: 600px) {
+  .list-wrapper {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    background-color: white
+  }
 
 
-.card-header{
-  background-color: #D3D3D3;
-  padding: 2px
-}
+  /* .card-header{
+    background-color: #D3D3D3;
+  } */
 
-.equation-card{
-  disply: block;
-  padding: 5px;
+  .equation-card{
+    display: block;
+    margin-top: 40px;
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+
+  }
+
+  .submit-button {
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: white;
+    font-weight:200;
+    padding: 3px;
+  }
+
+  .list-items{
+    display: inline;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+
+
+  /* .delete-button {
+
+  } */
+
+  p {
+    font-weight: lighter;
+  }
 }

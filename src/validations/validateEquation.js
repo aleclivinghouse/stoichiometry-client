@@ -1,12 +1,10 @@
-
-
 export function validateEquation(equation){
  let lowerCaseRegex = /[a-z]/;
  let numRegex = /[0-9]/;
  let capitalRegex = /[A-Z]/;
  let lettersRegex = /^[a-zA-Z]+$/;
  let capitalSplit = /(?=[A-Z])/;
- if(!containsEquals(equation) || !containsTwoPlusses(equation)){
+ if(!containsEquals(equation) || !containsReactantPlus(equation)){
    return false;
  } else {
    let sides = equation.split("=");
@@ -55,14 +53,15 @@ const containsEquals = function(equation){
 }
 
 
-const containsTwoPlusses = function(equation){
+const containsReactantPlus = function(equation){
   let plusCount = 0;
-  for(let char of equation){
+  let split = equation.split('=');
+  for(let char of split[0]){
     if(char === '+'){
       plusCount +=1;
     }
   }
-  if(plusCount > 1){
+  if(plusCount === 1){
     return true;
   } else {
     console.log('returning false in containsTwoPlusses');

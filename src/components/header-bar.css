@@ -1,0 +1,11 @@
+.log-out-wrapper{
+  text-align: left;
+}
+
+button {
+  border-radius: 5px;
+  border-width: 2px;
+  border-color: white;
+  font-weight:200;
+  padding: 3px;
+}

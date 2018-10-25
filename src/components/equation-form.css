@@ -1,23 +1,203 @@
-/* input, select, button {
-  line-height: 100%;
-  background: #50597b;
-  color: #fff;
-  border: solid 1px #1f253d;
-  border-radius: 4px;
-  text-align:justify;
-}
-label {
-  margin-right: 5px;
-  margin-left: 5px;
+
+
+@media only screen and (min-width: 600px) {
+  html {
+   box-sizing: border-box;
+   font-size: 16px;
+  }
+
+  *,
+  *:after,
+  *:before {
+   box-sizing: border-box;
+  }
+
+  body {
+   font: 100% 'Roboto', arial, sans-serif;
+   background: #f5f5f5;
+  }
+
+  form {
+   padding: 2rem;
+   margin-top: 2rem;
+   margin-bottom: 2rem;
+   margin-right: auto;
+   margin-left: auto;
+   max-width: 80%;
+   background-color: #fff;
+   border-radius: 3px;
+  }
+
+  h1 {
+   margin-top: 0;
+   margin-bottom: 3.236rem;
+   text-align: center;
+   font-size: 1.618rem;
+  }
+
+  .form-group {
+   padding: 0;
+   border: 0;
+  }
+
+  .form-group + .form-group {
+   margin-top: 1rem;
+  }
+
+  label {
+   display: inline-block;
+   margin-bottom: .5rem;
+   font-size: .50rem;
+   text-transform: uppercase;
+   -ms-touch-action: manipulation;
+   touch-action: manipulation;
+  }
+
+  select{
+   display: inline-block;
+   max-width: 30%;
+   padding: .5rem .75rem;
+   font-size: 1rem;
+   vertical-align: center;
+   line-height: 1.25;
+   color: #55595c;
+   background-color: #fff;
+   background-image: none;
+   background-clip: padding-box;
+   border-top: 0;
+   border-right: 0;
+   border-bottom: 1px solid #eee;
+   border-left: 0;
+   border-radius: 3px;
+   -webkit-transition: all 0.25s cubic-bezier(0.4, 0, 1, 1);
+   transition: all 0.25s cubic-bezier(0.4, 0, 1, 1);
+  }
+
+  .amount{
+   box-sizing: border-box;
+   vertical-align: center;
+   /* -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box; */
+   display: inline-block;
+   max-width: 20%;
+   /* padding: .5rem .75rem; */
+   margin-bottom: -50px;
+   font-size: 1rem;
+   /* line-height: 1.25; */
+   color: #55595c;
+   background-color: #fff;
+   background-image: none;
+   background-clip: padding-box;
+   border-top: 0;
+   border-right: 0;
+   border-bottom: 1px solid #eee;
+   border-left: 0;
+   border-radius: 3px;
+   -webkit-transition: all 0.25s cubic-bezier(0.4, 0, 1, 1);
+   transition: all 0.25s cubic-bezier(0.4, 0, 1, 1);
+  }
+
+  /* .equation-input {
+
+  } */
+
+  .equation-input {
+    display: inline-block;
+    padding: .5rem .75rem;
+    width: 80%;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.25;
+    color: #55595c;
+    background-color: #fff;
+    background-image: none;
+    background-clip: padding-box;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #eee;
+    border-left: 0;
+    border-radius: 3px;
+    -webkit-transition: all 0.25s cubic-bezier(0.4, 0, 1, 1);
+    transition: all 0.25s cubic-bezier(0.4, 0, 1, 1);
+  }
+  .add-molecule {
+   display: inline-block;
+   font-size: 1rem;
+   text-align: center;
+   margin-bottom: -3px;
+  }
+
+  input:focus,
+  textarea:focus {
+   outline: 0;
+   border-bottom-color: #ffab00;
+  }
+
+  textarea {
+   resize: vertical;
+  }
+
+
+  .delete-field-button {
+    margin-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: inline;
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: white;
+    background-color: #4682b4;
+    color: white;
+    font-weight: lighter;
+    font-size: 10px;
+  }
+  .error {
+    text-align: center;
+    font-size: 12px;
+    color: #ff6666
+  }
+  .field-wrapper {
+    padding: 10px;
+  }
+
+  .submit-button {
+    margin-left: 10px;
+    padding: 5px;
+    display: inline;
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: white;
+    background-color: #4682b4;
+    width: 50%;
+    color: white;
+    height: 30px;
+  }
+
 }
 
-.add-molecule {
-  margin-right: 5px;
-  margin-left: 5px;
-  padding: 5px;
-} */
 
-html {
+
+
+/*phones  *//*phones  *//*phones  *//*phones  *//*phones  *//*phones  *//*phones  */
+/*phones  *//*phones  *//*phones  *//*phones  *//*phones  *//*phones  *//*phones  */
+/*phones  *//*phones  *//*phones  *//*phones  *//*phones  *//*phones  *//*phones  */
+/*phones  *//*phones  *//*phones  *//*phones  *//*phones  *//*phones  *//*phones  */
+/*phones  *//*phones  *//*phones  *//*phones  *//*phones  *//*phones  *//*phones  */
+/*phones  *//*phones  *//*phones  *//*phones  *//*phones  *//*phones  *//*phones  */
+/*phones  *//*phones  *//*phones  *//*phones  *//*phones  *//*phones  *//*phones  */
+/*phones  *//*phones  *//*phones  *//*phones  *//*phones  *//*phones  *//*phones  */
+@media only screen and (max-width: 600px) {
+  .submit-button {
+    border-radius: 5px;
+    border-width: 2px;
+    background-color: #4682b4;
+    font-weight:200;
+    color: #f9f9f9;
+    margin-top: 5px;
+  }
+  html {
  box-sizing: border-box;
  font-size: 16px;
 }
@@ -36,13 +216,12 @@ body {
 form {
  padding: 2rem;
  margin-top: 2rem;
- margin-bottom: 2rem;
  margin-right: auto;
  margin-left: auto;
  max-width: 23.75rem;
  background-color: #fff;
  border-radius: 3px;
- /* box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07); */
+ box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
 }
 
 h1 {
@@ -64,85 +243,33 @@ h1 {
 label {
  display: inline-block;
  margin-bottom: .5rem;
- font-size: .50rem;
+ font-size: .75rem;
  text-transform: uppercase;
  -ms-touch-action: manipulation;
  touch-action: manipulation;
 }
-
-select{
- display: inline-block;
- max-width: 30%;
- padding: .5rem .75rem;
- font-size: 1rem;
- vertical-align: center;
- line-height: 1.25;
- color: #55595c;
- background-color: #fff;
- background-image: none;
- background-clip: padding-box;
- border-top: 0;
- border-right: 0;
- border-bottom: 1px solid #eee;
- border-left: 0;
- border-radius: 3px;
- -webkit-transition: all 0.25s cubic-bezier(0.4, 0, 1, 1);
- transition: all 0.25s cubic-bezier(0.4, 0, 1, 1);
+.delete-field-button {
+  margin-left: 10px;
+  margin-bottom: 5px;
+  wdith: 100%;
+  font-size: 10px;
+  padding: 3px;
+  display: inline;
+  border-radius: 5px;
+  border-width: 2px;
+  border-color: white;
+  background-color: #4682b4;
+  color: white;
+  font-weight:200;
 }
 
-.amount{
- box-sizing: border-box;
- vertical-align: center;
- -moz-box-sizing: border-box;
- -webkit-box-sizing: border-box;
- display: inline-block;
- max-width: 30%;
- padding: .5rem .75rem;
- margin-bottom: -50px;
- font-size: 1rem;
- line-height: 1.25;
- color: #55595c;
- background-color: #fff;
- background-image: none;
- background-clip: padding-box;
- border-top: 0;
- border-right: 0;
- border-bottom: 1px solid #eee;
- border-left: 0;
- border-radius: 3px;
- -webkit-transition: all 0.25s cubic-bezier(0.4, 0, 1, 1);
- transition: all 0.25s cubic-bezier(0.4, 0, 1, 1);
-}
 
-/* .equation-input {
-
-} */
-
-.equation-input {
-  display: block;
-  padding: .5rem .75rem;
-  width: 100%;
-  font-size: 1rem;
-  text-align: center;
-  line-height: 1.25;
-  color: #55595c;
-  background-color: #fff;
-  background-image: none;
-  background-clip: padding-box;
-  border-top: 0;
-  border-right: 0;
-  border-bottom: 1px solid #eee;
-  border-left: 0;
-  border-radius: 3px;
-  -webkit-transition: all 0.25s cubic-bezier(0.4, 0, 1, 1);
-  transition: all 0.25s cubic-bezier(0.4, 0, 1, 1);
-}
-.add-molecule {
+input,
+textarea {
  display: block;
  padding: .5rem .75rem;
  width: 100%;
  font-size: 1rem;
- text-align: center;
  line-height: 1.25;
  color: #55595c;
  background-color: #fff;
@@ -163,40 +290,6 @@ textarea:focus {
  border-bottom-color: #ffab00;
 }
 
-textarea {
- resize: vertical;
-}
 
-.btn {
- display: inline-block;
- padding: .75rem 1rem;
- margin-top: 1.618rem;
- font-weight: 400;
- text-align: center;
- text-transform: uppercase;
- color: #fff;
- vertical-align: middle;
- white-space: nowrap;
- background-color: #ffab00;
- /* border: 1px solid transparent; */
- /* box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07); */
- cursor: pointer;
- -webkit-user-select: none;
- -moz-user-select: none;
- -ms-user-select: none;
- user-select: none;
- -webkit-transition: all 0.25s cubic-bezier(0.4, 0, 1, 1);
- transition: all 0.25s cubic-bezier(0.4, 0, 1, 1);
-}
 
-.btn:focus, .btn:hover {
- background-color: #ffc142;
- box-shadow: 0 18px 35px rgba(50, 50, 93, 0.1), 0 8px 15px rgba(0, 0, 0, 0.07);
 }
-.btn:focus {
- outline: 0;
-}
-
-/* .add-molecule{
-  background-color: #eee
-} */

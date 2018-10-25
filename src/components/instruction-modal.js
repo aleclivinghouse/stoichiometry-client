@@ -15,7 +15,7 @@ export class Modal extends React.Component {
   render(){
     return (
       <div>
-        <button onClick={this.toggleHidden.bind(this)} >
+        <button onClick={this.toggleHidden.bind(this)} className="help-button">
           Help
         </button>
         {!this.state.isHidden && <Child />}
