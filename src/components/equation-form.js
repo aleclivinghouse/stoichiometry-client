@@ -126,7 +126,7 @@ handleSubmit = (e) => {
                  <option value="1">First</option>
                  <option value="2">Second</option>
                </select>
-               <a onClick={this.deleteField} data-id={idx}>Delete</a>
+               <a onClick={this.deleteField} data-id={idx} className="submit-button">Delete</a>
                </div>
             )
           })
