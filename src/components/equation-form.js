@@ -101,8 +101,6 @@ handleSubmit = (e) => {
         {
           molecules.map((val, idx)=>{
             let amountId = `amount-${idx}`, whichMoleId = `whichMole-${idx}`
-            console.log('below is the whichMole id');
-            console.log();
             return (
                <div key={idx} className = "field-wrapper">
                 <label htmlFor={amountId}>Amount</label>
@@ -128,7 +126,7 @@ handleSubmit = (e) => {
                  <option value="1">First</option>
                  <option value="2">Second</option>
                </select>
-               <a onClick={this.deleteField} class="delete-field-button" data-id={idx}>Delete</a>
+               <a onClick={this.deleteField} data-id={idx}>Delete</a>
                </div>
             )
           })
