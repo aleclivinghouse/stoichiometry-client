@@ -42,10 +42,13 @@ h1 {
 }
 
 button {
-  background-color: #4682b4;
   font-weight:200;
   color: #f9f9f9;
   margin-top: 5px;
+  background-color: #4682b4;
+  border:none;
+  text-decoration: none;
+  padding: .5rem 1rem;
 }
 
 label {
